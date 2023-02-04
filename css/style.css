@@ -1,0 +1,142 @@
+/* Outfit 300/400/600 */
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+
+:root {
+  --color-soft-blue: hsl(215, 51%, 70%);
+  --color-cyan: hsl(178, 100%, 50%);
+  --color-vdark-blue-main: hsl(217, 54%, 11%);
+  --color-vdark-blue-card: hsl(216, 50%, 16%);
+  --color-vdark-blue-line: hsl(215, 32%, 27%);
+  --color-white: #fff;
+}
+
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+html {
+  font-size: 62.5%;
+}
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--color-vdark-blue-main);
+  font-size: 1.8rem;
+}
+.card {
+  width: 30rem;
+  padding: 2rem;
+  background-color: var(--color-vdark-blue-card);
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.card__image {
+  width: 100%;
+  border-radius: 1rem;
+  position: relative;
+  z-index: 1;
+}
+.card__image img {
+  width: 100%;
+}
+.card__image::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  transition: opacity 0.2s ease-in-out;
+  background: linear-gradient(90deg, cyan, cyan);
+  opacity: 0;
+  z-index: 2;
+}
+.card__image::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  transition: opacity 0.2s ease-in-out;
+  background: url("../images/icon-view.svg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  opacity: 0;
+  z-index: 3;
+}
+.card__image:hover.card__image::after {
+  opacity: 0.4;
+  cursor: pointer;
+}
+.card__image:hover.card__image::before {
+  opacity: 1;
+  cursor: pointer;
+}
+.card__heading {
+  color: var(--color-white);
+  font-size: 2.2rem;
+}
+.card__heading:hover {
+  color: var(--color-cyan);
+  cursor: pointer;
+}
+.card__text {
+  color: var(--color-soft-blue);
+}
+.card__info {
+  display: flex;
+  justify-content: space-between;
+}
+.card__info--left,
+.card__info--right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.2rem;
+  color: var(--color-cyan);
+  width: 10rem;
+}
+
+.card__info--right {
+  color: var(--color-soft-blue);
+}
+.divider {
+  color: var(--color-vdark-blue-line);
+}
+
+.fig {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin: 0 0 10px 5px;
+}
+.fig__image {
+  width: 2.5rem;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px var(--color-white);
+}
+.fig__text {
+  color: var(--color-soft-blue);
+}
+.f-name {
+  color: var(--color-white);
+  text-decoration: none;
+}
+.f-name {
+  color: var(--color-cyan);
+}
